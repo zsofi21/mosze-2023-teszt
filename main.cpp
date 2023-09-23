@@ -4,23 +4,24 @@ constexpr int N_ELEMENTS = 100;
 
 int main()
 {
-    int *b = new int[NELEMENTS]; //typo
-    std::cout << '1-100 ertekek duplazasa' //;
-    for (int i = 0;) //primary expression hianyzik
+    int *b = new int[N_ELEMENTS];
+    std::cout << "1-100 ertekek duplazasa";
+    for (int i = 0; i <= N_ELEMENTS; i++)
     {
         b[i] = i * 2;
     }
-    for (int i = 0; i; i++) //hibas primary expression
+    for (int i = 0; i <=N_ELEMENTS; i++)
     {
-        std::cout << "Ertek:" //nem irja ki az erteket
+        std::cout << "Ertek: " << b[i] << std::endl;
     }
     std::cout << "Atlag szamitasa: " << std::endl;
     int atlag;
-    for (int i = 0; i < N_ELEMENTS, i++)
+    for (int i = 0; i <= N_ELEMENTS; i++)
     {
-        atlag += b[i] //;
+        atlag += b[i];
     }
     atlag /= N_ELEMENTS;
     std::cout << "Atlag: " << atlag << std::endl;
-    return 0; //memoria nem kerul felszabaditasra
+    delete[] b;
+    return 0;
 }
